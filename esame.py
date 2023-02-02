@@ -102,25 +102,16 @@ def compute_daily_max_difference(time_series):
         diff_max_value = max(diff_max) - min(diff_max)
 
         data.append(diff_max_value)
+
+        diff_max.clear()
     
     elif len(diff_max) == 1:
         
         data.append(None)
 
+        diff_max.clear()
+
 
     return data
-
-        
-
-
-list = CSVTimeSeriesFile("data.csv")
-
-lista = list.get_data()
-
-data = compute_daily_max_difference(lista)
-
-
-for i,item in enumerate(data):
-    print(i,item)
 
         
